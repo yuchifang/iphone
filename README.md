@@ -1,4 +1,4 @@
 ## iphone
 Use Css
 </br>
-Use jquery
+Use Jquery
