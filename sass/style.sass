@@ -1,0 +1,187 @@
+* 
+ //border: solid 1px black
+ position: relative
+ font-family: 微軟正黑體
+ vertical-align: top//垂直排列預設不是上方 改為上方
+
+html,body    
+  width: 100%//內容占滿整個html,body
+  height: 100%
+  margin: 0px
+  padding: 0px
+  background-color: #222
+  display: flex //變成flexbox
+  justify-content: center//flexbox左右對中
+  align-items: center//上下置中  
+  flex-direction: column//flex-direction 改變方向 上下排列(column) 左右排列(row)
+  
+  
+.phone
+  width: 250px
+  left: 0px
+  padding: 10px
+  background-color: #eee
+  border-radius: 10px
+  transition-duration: 0.5s
+  
+  
+.top
+  height: 40px
+  .camera
+    width: 10px
+    height: 10px
+    border-radius: 100% 
+    background-color: #333
+    position: absolute 
+    //外層需要relative
+    left: 50%
+    top: 50%
+    transform:      translate(-50%,-50%)//translateX(-50%)translateY(-50%)
+    
+.screen
+  //transition-duration: 0.5s//等於transition
+  height: 350px
+  transition: 0.5s
+  overflow: hidden
+ 
+    
+  .pages
+      //pages會強制換行 white-space  不要綁住內容 不加inline-block會無效
+    font-size: 0px //文件大小  無空格
+    white-space: nowrap //不去綑綁裡面的內容 不自動換行
+    transition: 0.5s
+    background-attachment: #333
+    width: 100%
+    height: 100%
+     //撐開
+    left: 0px
+          
+    .page
+      font-size: initial //恢復文件大小
+      display: inline-block//像inline 片或文字均不換行 但可以設定寬高
+      background-color: #444
+      
+      width: 100%
+      height: 100%
+      padding: 10px//padding會自動往外擴張你的寬度
+      box-sizing: border-box //改成往內縮10的距離
+      position: relative
+      white-space: normal //會綑綁裡面的內容
+      color: #eee
+      font-size: 15px
+      p
+        
+        margin-top: 30px
+      h2
+        color: white
+        font-size: 20px
+        margin: 0px
+      &:before 
+       //加上方框框 before
+       position: absolute
+        //before 會將畫面往下擠 加上absolute
+       left: 0
+       top: 0
+       content: ""  
+       display: block //區塊，元素會以區塊方式呈現，除非設定 position 或 float。
+       background-color: #FCB83A
+       height: 60px
+       width: 100%
+       //margin: -10px //貼其上下左右  加上absolute 就可以去掉
+      &:after 
+       //加上方框框 before
+       position: absolute
+        //before 會將畫面往下擠 加上absolute
+       left: 0
+       bottom: 0
+       content: ""  
+       display: block //區塊，元素會以區塊方式呈現，除非設定 position 或 float。
+       background-color: #FCB83A
+       height: 20px
+       width: 100%
+
+
+       // margin: -10px //貼其上下左右 這個有問題可以看看
+    .page1
+      background-color: #FCB83A
+      color: #fff
+      h2
+        font-size: 20px
+        margin-bottom: 0px
+      h1
+        font-size: 30px
+        margin-top: 0px
+      .orange
+        width: 300px
+        height: 300px
+        background-color: #FF8400
+        border-radius: 100%
+    .page2
+        border-right: solid 10px #FCB83A
+        border-left: solid  10px  #FCB83A
+    .page3
+        border-right: solid 10px #FCB83A
+        border-left: solid 10px  #FCB83A
+
+.screenleft
+  
+ border: solid 0px
+ position: absolute
+ cursor: pointer
+ left: 0% 
+ top: 0%
+ width: 50%
+ height: 100%
+ 
+.screenright     
+ border: solid 0px
+ position: absolute
+ cursor: pointer
+ left: 50% 
+ top: 0%
+ width: 50%
+ height: 100%
+.bottom
+  height: 60px
+  .square
+    width: 40px
+    height: 40px
+    border-radius: 100%
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    text-align: center //文字置中
+    font-size: 27px
+    color: solid 1px rgba(black,0.4)
+    border: solid 1px rgba(black,0.4)
+    cursor: pointer
+    &:hover
+      background-color: #ddd
+    
+    
+.status,.phonename
+  //.status,.phonename//有status也有phonename兩class都要做的意思
+  //.status"空格".phonename status裡的phonename
+  color: white
+  margin: 3px//解決按鈕推下去的問題
+.status
+ font-size: 27px
+ margin-top: 5px
+.phonename
+  margin: 10px
+.buttons
+  margin-top: 20px
+  button
+    background-color: transparent 
+    //透明
+    border: solid 1px  rgba(#fff,0.2)
+    color: white
+    padding: 5px 13px// 上下 左右
+    border-radius: 5px
+    cursor: pointer
+    font-size: 15px
+    &:hover
+      background-color: #fff
+      color: #333
+.wiggle
+  transition: 0.5s
